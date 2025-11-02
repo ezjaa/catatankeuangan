@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /*===color===*/
+    --bgOne: rgba(67, 43, 226, 0.137);
+    --colorOne: white;
+    --colorTwo: blueviolet;
+
+    /*===shadow===*/
+    --textShadow: 0 0 5px rgba(0,0,0,0.5);
+    --boxShadow: 0 0 6px rgba(0,0,0,0.3);
+    
+
+    /*===border===*/
+    --borderRadius: 0.4em;
+    --borderRadiusCard: 0.3em;
+    --borderBox: 1.2px solid rgba(0,0,0,0.5);
+    --borderBoxTwo: 2px solid var(--colorTwo); 
+
+    /*===fontweight===*/
+    --normal: 400; 
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+    --extra: 800;
+
+    /*===card===*/
+    --card: 25em;
+}
+
+/*===text===*/
+h1 {
+    font-size: 1.2em;
+    font-weight: var(--bold);
+}
+
+h2 {
+    font-size: 1.1em;
+    font-weight: var(--semi-bold);
+}
+
+h3, button {
+    font-size: 0.9em;
+    font-weight: var(--medium);
+}
+
+p {
+    font-size: 0.8em;
+    font-weight: var(--medium);
+}
+
+/*===content===*/
+body {
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--bgOne);
+}
+
+/*===Header===*/
+header {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--colorTwo);
+    border: var(--borderBox);
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 3em;
+    gap: 1em;
+}
+
+.logo, a {
+    color: var(--colorOne);
+    text-shadow: var(--textShadow);
+}
+
+nav {
+    display: flex;
+    padding: 1em;
+}
+
+ul, a {
+    font-weight: var(--semi-bold);
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    gap: 0.8em;
+}
+
+.nav-mobile {
+    width: 1.8em;
+    height: 1.8em;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2em;
+    border: none;
+    background-color: transparent;
+    transform: rotate(0);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.nav-mobile span {
+    width: 90%;
+    height: 0.3em;
+    background-color: var(--colorOne);
+    border-radius: var(--borderRadiusCard);
+    box-shadow: var(--textShadow);
+}
+
+.nav-mobile.aktif {
+    transform: rotate(90deg);
+}
+
+/*===Main===*/
+main {
+    width: 100%;
+    padding: 1.5em 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+/*===BOX===*/
+.box {
+    width: var(--card);
+    max-width: 100%;
+    background-color: var(--colorOne);
+    border: var(--borderBox);
+    border-radius: var(--borderRadiusCard);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+/*===BagianTotalSaldo===*/
+.totalSaldoBox {
+    position: relative;
+}
+
+#totalSaldoTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.9em;
+}
+
+.totalSaldoBoxCard, .totalBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8em;
+
+}
+
+.totalSaldoCard, .totalCard {
+    width: 50%;
+    text-align: center;
+    background-color: var(--colorTwo);
+    border: var(--borderBox);
+    border-radius: var(--borderRadiusCard);
+    box-shadow: var(--boxShadow);
+    padding: 0.5em 1em;
+    color: var(--colorOne);
+    text-shadow: var(--textShadow);
+}
+
+.editBtn {
+    width: 100%;
+    background-color: var(--colorOne);
+    border: var(--borderBox);
+    border-radius: var(--borderRadiusCard);
+    color: var(--colorTwo);
+    padding: 0.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editBtn.aktif {
+    background-color: var(--colorTwo);
+    color: var(--colorOne);
+}
+
+/*==-IdH2==*/
+#editSaldoTitle, #catatan-title, #TotalTransaksi-title {
+    text-align: center;
+}
+
+/*===editSaldo===*/
+.editSaldoBox {
+    display: none;
+    padding: 1.8em;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.editSaldoBox.aktif {
+    display: flex;
+}
+
+/*=======================FormSetting====================*/
+fieldset {
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    width: 100%;
+    color: var(--colorTwo);
+    padding: 0.5em;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.5em 1em;
+    border: var(--borderBoxTwo);
+    border-radius: var(--borderRadiusCard);
+}
+
+.saldoBtn, .TambahBtn {
+    width: 100%;
+    background-color: var(--colorOne);
+    border: var(--borderBox);
+    border-radius: var(--borderRadiusCard);
+    box-shadow: var(--boxShadow);
+    color: var(--colorTwo);
+    cursor: pointer;
+    padding: 0.5em;
+    margin-top: 1em;
+    transition: all 0.3s ease;
+}
+
+.saldoBtn:hover {
+    background-color: var(--colorTwo);
+    color: var(--colorOne);
+}
+
+.TambahBtn {
+    color: var(--colorOne);
+    background-color: var(--colorTwo);
+}
+
+.TambahBtn:hover {
+    color: var(--colorTwo);
+    background-color: var(--colorOne);
+}
+
+.catatanBox {
+    margin-top: 0;
+    padding: 1.8em;
+    transition: all 0.6s ease;
+}
+
+.riwayat {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: var(--colorTwo);
+    color: var(--colorOne);
+    border-radius: var(--borderRadiusCard);
+    padding-left: 1.5em;
+    font-size: 0.9em;
+}
+
+.kalender {
+    width: 50%;
+    font-weight: var(--semi-bold);
+    text-align: right;
+    padding: 0.5em em;
+    background-color: var(--colorOne);
+    color: var(--colorTwo);
+    border: var(--borderBoxTwo);
+    border-radius: var(--borderRadiusCard);
+    cursor: pointer;
+}
+
+.transaksiBoxCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    text-align: center;
+}
+
+.keteranganTransaksi {
+    display: flex;
+    justify-content: center;
+    color: rgba(0,0,0,0.5);
+    text-shadow: 0 0 5px rgba(0,0,0,0.1);
+    padding: 0.5em 0;
+}
+
+.transaksiCard {
+    width: var(--card);
+    max-width: 100%;
+    background-color: var(--colorOne);
+    border: var(--borderBox);
+    border-radius: var(--borderRadiusCard);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.transaksiCard p {
+    width: 100%;
+    font-size: 0.9em;
+    font-weight: var(--semi-bold);
+    padding: 0.5em;
+}
+
+.transaksiCard h3 {
+    width: 100%;
+    font-size: 0.9em;
+    font-weight: var(--semi-bold);
+    padding: 0.5em;
+}
+
+/*====footer====*/
+footer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorTwo);
+    color: var(--colorOne);
+}
+
+@media (max-width: 768px) {
+* {
+    font-size: 14px;
+}
+.nav-mobile {
+    display: flex;
+}
+
+nav {
+    width: 10em;
+    height: 0;
+    background-color: var(--colorOne);
+    border-radius: var(--borderRadiusCard);
+    border: var(--borderBox);
+    box-shadow: var(--boxShadow);
+    position: absolute;
+    top: 3.5em;
+    right: 1em;
+    padding: 1em;
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+nav.aktif {
+    transform: translateY(0);
+    height: 12em;
+    opacity: 1;
+    z-index: 1;
+}
+
+ul.aktif {
+    gap: 0.5em;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 0;
+    transition: all 0.5s ease;
+}
+
+a {
+    color: var(--colorTwo);
+}
+
+}
+

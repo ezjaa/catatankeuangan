@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Muhamad Reza">
+    <link rel="stylesheet" href="style.css">
+    <title>Catatan Keuangan</title>
+    <meta name="description" content="Catat Pemasukan & Pengeluaranmu. Supaya keuanga terkontrol dengan baik">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <div class="logo">
+            <h1>Catatan Keuangan</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Rekening</a></li>
+                <li><a href="">Rekap</a></li>
+                <li><a href="">Donasi</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </nav>
+        <button aria-label="buka menu navigasi" class="nav-mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    <!--Main-->
+    <main>
+        <!--TotalSaldo-->
+        <section id="totalSaldo" aria-labelledby="totalSaldoTitle">
+            <!--TotalSaldo-->
+            <div class="box totalSaldoBox">
+                <h2 id="totalSaldoTitle">Total Saldo <span id="totalSaldoSpanRP">Rp 0</span></h2>
+                <div class="totalSaldoBoxCard">
+                    <!--Cash-->
+                    <div class="totalSaldoCard">
+                        <h3>Cash</h3>
+                        <p id="total-cash">Rp 0</p>
+                    </div>
+                    <!--Digital-->
+                    <div class="totalSaldoCard">
+                        <h3>Digital</h3>
+                        <p id="total-digital">Rp 0</p>
+                    </div>
+                </div>
+                <button type="button" class="editBtn">Edit</button>
+            <!--EditTotalSaldo-->
+            <div class="box editSaldoBox" aria-labelledby="editSaldoTitle">
+                <div class="editSaldo">
+                    <h2 id="editSaldoTitle">Edit Total Saldo</h2>
+                    <form id="edit-saldo">
+                        <fieldset>
+                            <label for="cash"><h3>Cash</h3></label>
+                            <input id="cash" type="number" placeholder="Contoh: 835000">
+                        </fieldset>
+                        <fieldset>
+                            <label for="digital"><h3>Digital</h3></label>
+                            <input id="digital" type="number" placeholder="Contoh: 835000">
+                        </fieldset>
+                        <div class="editSaldoBtn">
+                            <button type="submit" class="saldoBtn">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section> 
+        <section id="catatanBaru" aria-labelledby="catatan-title">
+            <div class="box catatanBox">
+                <h2 id="catatan-title">Tambah Transaksi</h2>
+                <form id="tambah-transaksi">
+                    <fieldset>
+                        <label for="keterangan">Keterangan</label>
+                        <input id="keterangan" type="text" placeholder="Ada transaksi apa nih?" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="nominal">Nominal</label>
+                        <input id="nominal" type="number" placeholder="Berapa nominalnya?" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="sumber">Sumber</label>
+                        <select id="sumber" required>
+                            <option>Cash</option>
+                            <option>Digital</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <label for="jenis">Jenis</label>
+                        <select id="jenis" required>
+                            <option value="pengeluaran">Pengeluaran</option>
+                            <option value="pemasukan">Pemasukan</option>
+                        </select>
+                    </fieldset>
+                    <button type="submit" class="TambahBtn">Tambah</button>
+                </form>
+            </div>
+        </section>
+        <!--RiwayatTransaksi-->
+        <section id="riwayatTransaksi" aria-labelledby="riwayat-title">
+            <div class="box transaksiBox">
+                <div class="riwayat">
+                    <h2 id="riwayat-title">Riwayat Transaksi</h2>
+                <input type="date" class="kalender">
+                </div>
+                <div class="transaksiBoxCard">
+                    <p class="keteranganTransaksi">Belum ada transaksi</p>
+                </div>
+                <div class="box TotalTransaksi" aria-labelledby="TotalTransaksi-title">
+                    <h2 id="TotalTransaksi-title">Total Transaksi</h2>
+                <div class="totalBox">
+                    <div class="totalCard">
+                        <h3>Pemasukan</h3>
+                        <p>Rp 0</p>
+                    </div>
+                    <div class="totalCard">
+                        <h3>Pengeluaran</h3>
+                        <p>Rp 0</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <!--Footer-->
+    <footer>
+        <p>© Muhamad Reza. All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
